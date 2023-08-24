@@ -6,7 +6,7 @@
 * 2 Зайдите в созданный кластер под пользователем postgres
 sudo -u postgres psql
 * 3 Создайте новую базу данных testdb
-\CREATE DATABASE testdb;
+CREATE DATABASE testdb;
 \l – список всех БД
 * 4 Зайдите в созданную базу данных под пользователем postgres
 \c testdb
@@ -64,6 +64,8 @@ psql -h 127.0.0.1 -U testread -d testdb -W
 * 29 Есть идеи почему? если нет - смотрите шпаргалку
 Потому что выполненная ранее команда «grant SELECT on all TABLEs in SCHEMA testnm TO readonly;» была актуальна для существующих таблиц на тот момент. 
 С момента ее выполнения таблица пересоздавалась, и теперь нужно повторно выполнить команду «grant SELECT on all TABLEs in SCHEMA testnm TO readonly;»
+
+Потому что команда «ALTER default…» будет действовать для новых таблиц, а команда «grant SELECT on all TABLEs in SCHEMA testnm TO readonly» отработала только для существующих таблиц на тот момент времени. Нужно выполнить снова  команду «grant SELECT…» или пересоздать таблицу.
 * 30 Как сделать так чтобы такое больше не повторялось? если нет идей - смотрите шпаргалку
 \c testdb postgres; 
 ALTER default privileges in SCHEMA testnm grant SELECT on TABLES to readonly; 
