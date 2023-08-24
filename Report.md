@@ -11,33 +11,30 @@ sudo -u postgres psql
 * 4 Зайдите в созданную базу данных под пользователем postgres
   > <img src="pic/4.JPG" align="center" />
 * 5 Создайте новую схему testnm
-select current_database();
-CREATE SCHEMA testnm;
-select schema_name from information_schema.schemata;
+  > <img src="pic/5.JPG" align="center" />
 * 6 Создайте новую таблицу t1 с одной колонкой c1 типа integer
-CREATE TABLE t1(c1 integer);
+  > <img src="pic/6.JPG" align="center" />
 * 7 Вставьте строку со значением c1=1
-INSERT INTO t1 values(1);
+  > <img src="pic/7.JPG" align="center" />
 * 8 Создайте новую роль readonly
-CREATE role readonly;
-\du
+  > <img src="pic/8.JPG" align="center" />
 * 9 Дайте новой роли право на подключение к базе данных testdb
-grant connect on DATABASE testdb TO readonly;
+  > <img src="pic/9.JPG" align="center" />
 * 10 Дайте новой роли право на использование схемы testnm 
-grant usage on SCHEMA testnm to readonly;
+  > <img src="pic/10.JPG" align="center" />
 * 11 Дайте новой роли право на select для всех таблиц схемы testnm 
-grant SELECT on all TABLEs in SCHEMA testnm TO readonly;
+  > <img src="pic/11.JPG" align="center" />
 * 12 Создайте пользователя testread с паролем test123 
-CREATE USER testread with password 'test123';
-\du – список всех ролей/пользователей
+  > <img src="pic/12.JPG" align="center" />
 * 13 Дайте роль readonly пользователю testread 
-grant readonly TO testread; 
-\du
+  > <img src="pic/13.JPG" align="center" />
 * 14 Зайдите под пользователем testread в базу данных testdb
-psql -h 127.0.0.1 -U testread -d testdb -W
+  > <img src="pic/14.JPG" align="center" />
 * 15 Сделайте select * from t1;
+  > <img src="pic/15.JPG" align="center" />
 * 16 Получилось? (могло если вы делали сами не по шпаргалке и не упустили один существенный момент про который позже)
-Не получилось прочитать таблицу t1, нет прав доступа. 
+<br> __*Не получилось прочитать таблицу t1, нет прав доступа.*__
+  > <img src="pic/16.JPG" align="center" />
 * 17 Напишите что именно произошло в тексте домашнего задания
 Создали таблицу t1 в базе данных testdb, и у пользователя testread  есть доступ к базе testdb из-за роли readonly. Казалось бы что пользователь testread должен иметь доступ на чтение к ней, а доступа нет.  В задании сказано было создать таблицу t1, но не указали в какой схеме.
 * 18 У вас есть идеи почему? ведь права то дали?
