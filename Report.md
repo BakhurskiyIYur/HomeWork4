@@ -3,13 +3,13 @@
 Описание/Пошаговая инструкция выполнения домашнего задания:
 
 * 1 Создайте новый кластер PostgresSQL 14
+  > <img src="pic/1.JPG" align="center" />
 * 2 Зайдите в созданный кластер под пользователем postgres
 sudo -u postgres psql
 * 3 Создайте новую базу данных testdb
-CREATE DATABASE testdb;
-\l – список всех БД
+  > <img src="pic/3.JPG" align="center" />
 * 4 Зайдите в созданную базу данных под пользователем postgres
-\c testdb
+  > <img src="pic/4.JPG" align="center" />
 * 5 Создайте новую схему testnm
 select current_database();
 CREATE SCHEMA testnm;
