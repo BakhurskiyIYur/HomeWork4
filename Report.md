@@ -72,9 +72,9 @@ sudo -u postgres psql
 * 33 Есть идеи почему? если нет - смотрите шпаргалку
 <br> __*Потому что команда «ALTER default…» будет действовать для новых таблиц, а команда «grant SELECT on all TABLEs in SCHEMA testnm TO readonly» отработала только для существующих таблиц на тот момент времени. Нужно выполнить снова  команду «grant SELECT…» или пересоздать таблицу.*__
 * 34 Сделайте select * from testnm.t1;
+  > <img src="pic/31.JPG" align="center" />
 * 35 Получилось?
 <br> __*Да.*__
-  > <img src="pic/31.JPG" align="center" />
 * 36 Ура!
 * 37 Теперь попробуйте выполнить команду create table t2(c1 integer); insert into t2 values (2);
   > <img src="pic/34.JPG" align="center" />
