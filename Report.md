@@ -1,5 +1,4 @@
-# HomeWork4
-Postgres_HomeWork
+# Домашнее задание №4
 
 Описание/Пошаговая инструкция выполнения домашнего задания:
 yc compute instance create  --name vm-ubuntu  --hostname vm-ubuntu  --zone ru-central1-a  --network-interface subnet-name=default-ru-central1-a,nat-ip-version=ipv4  --memory 4G  --cores 2  --zone ru-central1-a  --create-boot-disk size=15G,type=network-ssd,image-folder-id=standard-images,image-family=ubuntu-2204-lts,auto-delete=true  --metadata-from-file ssh-keys=/Users/GPN-A/.ssh/filessh.txt
