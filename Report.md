@@ -60,9 +60,10 @@ sudo -u postgres psql
 * 28 Получилось?
 <br> __*Нет, не получилось, нет прав доступа.*__
 * 29 Есть идеи почему? если нет - смотрите шпаргалку
-<br> __*Потому что выполненная ранее команда «grant SELECT on all TABLEs in SCHEMA testnm TO readonly;» была актуальна для существующих таблиц на тот момент. 
-С момента ее выполнения таблица пересоздавалась, и теперь нужно повторно выполнить команду «grant SELECT on all TABLEs in SCHEMA testnm TO readonly;»*__
+<br> __*Потому что выполненная ранее команда «grant SELECT on all TABLEs in SCHEMA testnm TO readonly;» дала доступ к существующим таблицам на тот момент. 
+С момента выполнения этой команды таблица t1 пересоздавалась, и теперь нужно повторно выполнить команду «grant SELECT on all TABLEs in SCHEMA testnm TO readonly;»*__
 * 30 Как сделать так чтобы такое больше не повторялось? если нет идей - смотрите шпаргалку
+<br> __*ALTER DEFAULT PRIVILEGES Позволяет установить привилегии, которые будут применяться к объектам, созданным в будущем*__
   > <img src="pic/30.JPG" align="center" />
 * 31 Сделайте select * from testnm.t1;
   > <img src="pic/32.JPG" align="center" />
