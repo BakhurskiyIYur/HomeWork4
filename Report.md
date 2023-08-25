@@ -31,7 +31,6 @@ sudo -u postgres psql
 * 14 Зайдите под пользователем testread в базу данных testdb
   > <img src="pic/14.JPG" align="center" />
 * 15 Сделайте select * from t1;
-  > <img src="pic/15.JPG" align="center" />
 * 16 Получилось? (могло если вы делали сами не по шпаргалке и не упустили один существенный момент про который позже)
 <br> __*Не получилось прочитать таблицу t1, нет прав доступа.*__
   > <img src="pic/16.JPG" align="center" />
